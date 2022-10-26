@@ -1,0 +1,77 @@
+<!--
+File Name - list.ejs
+Student Name - Shreyas Singh
+Student ID - 301239523
+Date - 25-10-2022
+-->
+
+
+<%- include ('../partials/header.ejs'); %>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row" style="margin-top:20px;">
+            <h1>
+                <%= title %>
+                
+            </h1>
+            <div style="text-align: right;">
+            <% if (typeof userName == 'string' && userName) { %>
+                <h4>Hello! <%= userName %></h4> 
+             <% } else { %>
+               
+             <% } %>  
+            </div>
+             <br>
+            <div>
+                <a href="/contactlist/add" class="btn btn-primary align-self-end" role="button">
+                    <i class="fas fa-plus-circle"></i>
+                    Add
+                </a>
+            </div>
+            <div style="margin-bottom: 10px;"></div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Contact Number</th>
+                        <th class="text-center">Email ID</th>
+                        <th class="text-center" colspan="2">Actions</th>
+                    </tr>
+
+                    <!-- Repeatable Template Row -->
+                    
+                    <% for(let count=0; count < ContactList.length; count++) { %>
+                        <tr>
+                            <td class="text-center">
+                                <%= ContactList[count].name %>
+                            </td>
+                            <td class="text-center">
+                                <%= ContactList[count].number %>
+                            </td>
+                            <td class="text-center">
+                                <%= ContactList[count].email %>
+                            </td>
+
+                            <td class="text-center">
+                                <a href="/contactlist/edit/<%= ContactList[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="/contactlist/delete/<%= ContactList[count]._id %>"
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                        </tr>
+
+                        <% } %>
+                </table>
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+    </main>
+    <%- include ('../partials/footer.ejs'); %>

@@ -26,62 +26,86 @@
         </a>
     
     
-    <ul class="navbar-nav space" >
+        <ul class="navbar-nav space" >
     
       
-        <li class="nav-item"> 
-            <% if (title == "Home") { %>
-                <a class="nav-link active" href="/"> 
-            <%} else { %>
-                <a class="nav-link" href="/">
-            <% } %>
-                <i class="fas fa-home"></i> Home </a>
-            </a>
-        </li>
-        
-        <li class="nav-item"> 
-            <% if (title == "Projects") { %>
-                <a class="nav-link active" href="/projects"> 
-            <%} else { %>
-                <a class="nav-link" href="/projects">
-            <% } %>
-                <i class="fas fa-tasks"></i> Projects </a> 
-            </a>
-        </li>
-
-        <li class="nav-item"> 
-            <% if (title == "Services") { %>
-                <a class="nav-link active" href="/services"> 
-            <%} else { %>
-                <a class="nav-link" href="/services">
-            <% } %>
-                <i class="fas fa-briefcase"></i> Services </a> 
-            </a>
-        </li>
-        
-        <li class="nav-item"> 
-            <% if (title == "About") { %>
-                <a class="nav-link active" href="/about">
-            <%} else { %>
-                <a class="nav-link" href="/about">
-            <% } %>
-                <i class="far fa-address-card"></i> About </a>
-            </a>
-        </li>
-
-        <li class="nav-item"> 
-            <% if (title == "Contact Me") { %>
-                <a class="nav-link active" href="/contact">
-            <%} else { %>
-                <a class="nav-link" href="/contact">
-            <% } %>
-                <i class="fa fa-phone"></i> Contact  </a>
-            </a>
-        </li>
-
-        
-      
-    </ul>
+            <li class="nav-item"> 
+                <% if (title == "Home") { %>
+                    <a class="nav-link active" href="/"> 
+                <%} else { %>
+                    <a class="nav-link" href="/">
+                <% } %>
+                    <i class="fas fa-home"></i> Home </a>
+                </a>
+            </li>
+            
+            <li class="nav-item"> 
+                <% if (title == "Projects") { %>
+                    <a class="nav-link active" href="/projects"> 
+                <%} else { %>
+                    <a class="nav-link" href="/projects">
+                <% } %>
+                    <i class="fas fa-tasks"></i> Projects </a> 
+                </a>
+            </li>
+    
+            <li class="nav-item"> 
+                <% if (title == "Services") { %>
+                    <a class="nav-link active" href="/services"> 
+                <%} else { %>
+                    <a class="nav-link" href="/services">
+                <% } %>
+                    <i class="fas fa-briefcase"></i> Services </a> 
+                </a>
+            </li>
+            
+            <li class="nav-item"> 
+                <% if (title == "About") { %>
+                    <a class="nav-link active" href="/about">
+                <%} else { %>
+                    <a class="nav-link" href="/about">
+                <% } %>
+                    <i class="far fa-address-card"></i> About </a>
+                </a>
+            </li>
+    
+            <li class="nav-item"> 
+                <% if (title == "Contact Me") { %>
+                    <a class="nav-link active" href="/contact">
+                <%} else { %>
+                    <a class="nav-link" href="/contact">
+                <% } %>
+                    <i class="fa fa-phone"></i> Contact  </a>
+                </a>
+            </li>
+    
+            <li class="nav-item">  
+                <% if (typeof userName == 'string' && userName) { %>
+                  <a class="nav-link" href="/users/logout" onclick="return confirm('Sure ?')"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout </a>
+                <% } else { %>
+                    <% if (title == "Login") { %>
+                  <a class="nav-link active" href="/users/login">
+                    <%} else { %> 
+                        <a class="nav-link" href="/users/login">
+                            <% } %>
+                      <i class="fa fa-sign-in" aria-hidden="true"></i> login  </a>
+                </a>
+                <% } %>            
+                
+              </li> 
+          
+            <li class="nav-item"> 
+                <% if (title == "Contact List") { %>
+                    <a class="nav-link active" href="/users/login">
+                <%} else { %>
+                    <a class="nav-link" href="/users/login">
+                <% } %>
+                <i class="fa fa-th-list fa-1x"></i> Contact List  </a>
+                </a>
+            </li>
+    
+          
+        </ul>
   </p>
 
   </nav>
